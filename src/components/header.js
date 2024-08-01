@@ -19,6 +19,9 @@ const Header = () => {
                 <li>
                     <Link to="/about" className="block py-2 px-3 text-gray-900">About</Link>
                 </li>
+                <li>
+                    <Link to="/countries" className="block py-2 px-3 text-gray-900">Countries</Link>
+                </li>
               </ul>
             </div>
           </div>

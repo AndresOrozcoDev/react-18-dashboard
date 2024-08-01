@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from '../assets/images/react-original.svg';
+import react from '../assets/images/react-original.svg';
+import tailwindcss from '../assets/images/tailwindcss-original.svg';
 
 const Header = () => {
     return(
         <nav className="bg-white border border-b-2">
           <div className="max-w-screen-xl flex items-center justify-between mx-auto px-8 py-2">
-            <a href="/" className="flex items-center">
-              <img src={logo} className="w-8" alt="Logo" />
+            <a href="/" className="flex items-center gap-x-2">
+              <img src={react} className="w-8" alt="Logo" />
+              <img src={tailwindcss} className="w-8" alt="Logo" />
             </a>
             <div className="">
               <ul className="font-medium flex flex-row py-2">

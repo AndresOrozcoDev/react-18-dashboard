@@ -1,6 +1,6 @@
-# React 16
+# React 18
 
-This template provides a minimal setup to get React bootstrapped with [Create React App](https://github.com/facebook/create-react-app) working with Tailwind CSS and React-router-dom
+This template provides a minimal setup to get React bootstrapped with [Create React App](https://github.com/facebook/create-react-app) working with Tailwind CSS and React-router-dom.
 
 ## Development server
 

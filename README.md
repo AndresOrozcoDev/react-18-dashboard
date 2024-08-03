@@ -1,6 +1,28 @@
-# React 18
+# React 18 Dashboard
 
-This template provides a minimal setup to get React bootstrapped with [Create React App](https://github.com/facebook/create-react-app) working with Tailwind CSS and React-router-dom.
+Project based on React JS 18 to demonstrate basic and advanced knowledge of the framework.
+
+It is a panel for the visualization of data from different sources and the management of states.
+
+## Requirements
+
+Make sure you have the following programs installed before running the application:
+
+- [Node (v22.2.0)](https://nodejs.org/en)
+- [Git (Latest)](https://git-scm.com/)
+
+## Install
+
+Run the next command for install and setting project.
+
+```bash
+git clone https://github.com/AndresOrozcoDev/react-18-dashboard.git
+cd react-18-dashboard
+```
+
+```bash
+npm i
+```
 
 ## Development server
 
@@ -38,6 +60,26 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ```bash
 npm run build
 ```
+
+## Architecture
+
+```bash
+src/
+|-- assets/
+|-- components/
+|-- pages/
+|-- services/
+|-- App.css
+|-- App.js
+```
+
+## Technology Stack and Features
+
+- ⚡ [**React Create App**](https://create-react-app.dev/) for the frontend version 18.3.1.
+    - 🎨 [Tailwind CSS](https://tailwindcss.com/) for styles.
+    - ✅ [React Create App](https://facebook.github.io/create-react-app/docs/running-tests) for unit test.
+- 🐋 [**Docker**](https://www.docker.com) for development and production.
+
 ## Author
 
 [@AndresOrozcoDev](https://github.com/AndresOrozcoDev)

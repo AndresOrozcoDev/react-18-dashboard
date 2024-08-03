@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { getCountries } from '../services/country';
 import Table from '../components/table';
 import Pagination from '../components/pagination';
@@ -13,9 +13,9 @@ const Countries = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async (page) => {
     try {
-      const response = await getCountries(currentPage, itemsPerPage);
+      const response = await getCountries(page, itemsPerPage);
       setCountries(response.data.data);
       setLoading(false);
       setTotalItems(response.data.totalItems);
@@ -23,12 +23,12 @@ const Countries = () => {
       setError(err.message);
       setLoading(false);
     }
-  };
+  }, [itemsPerPage]);
 
   useEffect(() => {
     fetchData(currentPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage]);
+  }, [currentPage, fetchData]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

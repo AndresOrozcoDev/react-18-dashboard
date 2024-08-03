@@ -22,7 +22,7 @@ const Table = ({ data }) => {
                 {data.map((city, index) => (
                     <tr key={index}>
                         <td className='border border-gray-400 p-2 text-center align-middle'>
-                            <img className='inline-block object-cover h-5 w-6 align-middle' src={city.flags.svg}/>
+                            <img className='inline-block object-cover h-5 w-6 align-middle' src={city.flags.svg} alt='Flag'/>
                         </td>
                         <td className='border border-gray-400 p-2 text-center'>{city.cca2}</td>
                         <td className='border border-gray-400 p-2 ellipsis'>{city.name.common}</td>

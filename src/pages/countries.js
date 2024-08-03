@@ -9,13 +9,14 @@ const Countries = () => {
 
   const fetchData = async () => {
     try {
-      const response = await getCountries();
+      const response = await getCountries(1, 10);
       setCountries(response);
       setLoading(false);
     } catch (err) {
       setError(err.message);
       setLoading(false);
     }
+    console.log(countries);
   };
 
   useEffect(() => {

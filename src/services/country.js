@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const getCountries = async () => {
+export const getCountries = async (page, limit) => {
   try {
-    const response = await axios.get("https://restcountries.com/v3.1/all");
+    const response = await axios.get(`http://localhost:3000/countries?page=${page}&limit=${limit}`);
     return response;
   } catch (err) {
     console.error( err);

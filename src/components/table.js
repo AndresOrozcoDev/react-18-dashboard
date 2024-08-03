@@ -7,6 +7,10 @@ const Table = ({ data }) => {
         return <span>No data available</span>;
     }
 
+    function formatNumber(num) {
+        return num.toLocaleString('es-ES');
+      }
+
     return (
         <table className='w-full table-fixed border-collapse rounded-s-lg mb-5'>
             <thead>
@@ -27,7 +31,7 @@ const Table = ({ data }) => {
                         <td className='border border-gray-400 p-2 text-center'>{city.cca2}</td>
                         <td className='border border-gray-400 p-2 ellipsis'>{city.name.common}</td>
                         <td className='border border-gray-400 p-2 ellipsis'>{city.capital}</td>
-                        <td className='border border-gray-400 p-2 ellipsis'>{city.population}</td>
+                        <td className='border border-gray-400 p-2 ellipsis'>{formatNumber(city.population)}</td>
                     </tr>
                 ))}
             </tbody>

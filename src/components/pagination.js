@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const Pagination = ({ currentPage, itemsPerPage, totalItems, onPageChange }) => {
 
@@ -19,12 +19,17 @@ const Pagination = ({ currentPage, itemsPerPage, totalItems, onPageChange }) => 
     };
 
     return (
-        <nav className='text-center'>
-            <ul className="inline-flex -space-x-px text-sm">
+        <Fragment>
+            <div className="flex flex-1 justify-between sm:hidden">
+                <button onClick={handlePreviousPage} className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 font-medium text-gray-700 hover:bg-gray-50">Previous</button>
+                <button onClick={handleNextPage} className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 font-medium text-gray-700 hover:bg-gray-50">Next</button>
+            </div>
+        <nav className='hidden sm:flex sm:flex-1 sm:items-center sm:justify-center'>
+            <ul className="inline-flex -space-x-px">
                 <li>
                     <button
                         onClick={handlePreviousPage}
-                        className="flex items-center justify-center px-3 h-9 ms-0 bg-white border border-e-0 border-gray-400 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
+                        className="flex items-center justify-center px-3 h-9 ms-0 bg-white border border-gray-400 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
                         disabled={currentPage === 1}
                     >
                         Previous
@@ -34,7 +39,7 @@ const Pagination = ({ currentPage, itemsPerPage, totalItems, onPageChange }) => 
                     <li key={index}>
                         <button
                             onClick={() => onPageChange(index + 1)}
-                            className={`flex items-center justify-center px-3 h-9 ${currentPage === index + 1 ? 'text-blue-600 border border-e-0 border-gray-400 bg-blue-50' : 'bg-white border border-e-0 border-gray-400 hover:bg-gray-100 hover:text-gray-700'}`}
+                            className={`flex items-center justify-center px-3 h-9 ${currentPage === index + 1 ? 'text-blue-600 border border-gray-400 bg-blue-50' : 'border border-gray-400 hover:bg-gray-100 hover:text-gray-700'}`}
                         >
                             {index + 1}
                         </button>
@@ -51,6 +56,7 @@ const Pagination = ({ currentPage, itemsPerPage, totalItems, onPageChange }) => 
                 </li>
             </ul>
         </nav>
+        </Fragment>
     );
 };
 

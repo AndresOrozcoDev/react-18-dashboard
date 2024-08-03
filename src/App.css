@@ -1,0 +1,10 @@
+.content {
+    margin-inline: auto;
+    width: min(100% - 40px);
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

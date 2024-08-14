@@ -1,20 +1,27 @@
+import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Home from './pages/home';
-import About from './pages/about';
-import Countries from './pages/countries';
-import Header from "./components/header";
+
+const Home = React.lazy(() => import('./pages/home'));
+const About = React.lazy(() => import('./pages/about'));
+const Countries = React.lazy(() => import('./pages/countries'));
+const Header = React.lazy(() => import('./components/header'));
+
 
 function App() {
   return (
     <BrowserRouter>
       <div>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/countries" element={<Countries />} />
-        </Routes>
+      <Suspense fallback={<div>Loading Header...</div>}>
+          <Header />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/countries" element={<Countries />} />
+          </Routes>
+        </Suspense>
       </div>
     </BrowserRouter>
   );
